@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo-header">
+            <img src="./logo-header.png" alt="Logo Barbosa Soluções Digitais">
+        </a>
+        <ul class="social-links">
+            <li>
+                <a href="http://facebook.com.br" target="_blank" class="face"></a>
+            </li>
+            <li>
+                <a href="http://instagram.com" target="_blank" class="inst"></a>
+            </li>
+            <li>
+                <a href="http://twitter.com.br" target="_blank" class="twit"></a>
+            </li>
+            <li>
+                <a href="http://dribbbe.com.br" target="_blank" class="drib"></a>
+            </li>
+        </ul>
+    </header>
+    <section id="home">
+        <img class="logo" src="./logo-dark.png" alt="Barbosa Soluções Digitais Logo">
+    </section>
+    <section id="app" class="section-content">
+        <article>
+            <div class="title">
+                Apps
+            </div>
+            <div class="description">
+                Desenvolvemos aplicativos híbridos de alta performance para todas as plataformas iOS, Android e Windows.
+            </div>
+        </article>
+        <div class="image-reponsive">
+            <img src="development-app.png" alt="Desenvolvimento de Apps">
+        </div>
+    </section>
+    <section id="site" class="section-content">
+        <article>
+            <div class="title">
+                Websites <br/> e E-commerces
+            </div>
+            <div class="description">
+                Desenvolvemos websites e lojas virtuais, utilizando as melhores e mais recentes tecnologias do mercado.
+            </div>
+        </article>
+        <div class="image-reponsive">
+            <img src="development-web.png" alt="Desenvolvimento Web">
+        </div>
+    </section>
+    <section id="design" class="section-content">
+        <article>
+            <div class="title">
+                Branding
+            </div>
+            <div class="description">
+                Desenvolvemos websites e lojas virtuais, utilizando as melhores e mais recentes tecnologias do mercado.
+            </div>
+        </article>
+        <div class="image-reponsive">
+            <img src="development-art.png" alt="Desenvolvimento de Artes">
+        </div>
+    </section>
+    <section id="contato" class="section-content">
+        <article>
+            <div class="title">Contato</div>
+            <form>
+                <div class="inputs">
+                    <input class="input" type="text" name="Nome" placeholder="Nome">
+                    <input class="input" type="email" name="E-mail" placeholder="E-mail">
+                    <input class="input" type="empresa" name="Empresa" placeholder="Empresa">
+                    <input class="input" type="empresa" name="Mensagem" placeholder="Mensagem">
+                </div>
+                <button class="form-button" type="submit">Enviar</button>
+            </form>
+        </article>
+    </section>
+    <aside>
+        <div class="icon_menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#app">Aplicativos</a>
+            <a href="#site">Website/Loja Virtual</a>
+            <a href="#iden">Identidade Visual</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </aside>
+    <footer>
+        <a href="#app" class="icon_footer">
+            <span></span>
+            <span></span>
+        </a>
+    </footer>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    document.querySelector('.icon_menu').addEventListener('click', function () {
+        var aside = document.querySelector('aside').className;
+        if (aside === 'open') {
+            document.querySelector('aside').className = '';
+        } else {
+            document.querySelector('aside').className = 'open';
+        }
+    });
+
+    document.querySelectorAll('.menu a').forEach(function (a) {
+        a.addEventListener('click', function () {
+            document.querySelector('aside').className = '';
+        });
+    })
+
+    // window.addEventListener('scroll', function () {
+    //     if (window.scrollY > 115) {
+    //         document.querySelector('header').className = 'moved';
+    //     } else {
+    //         document.querySelector('header').className = '';
+    //     }
+    // });
+
+    document.querySelector('.icon_footer').addEventListener('click', (e) => {
+        e.preventDefault();
+        var element = event.target.getAttribute('href') != null ? event.target : event.target.parentElement;
+        var attr = element.getAttribute('href');
+        location.hash = attr;
+
+        console.log('=>', attr);
+
+        switch(attr) {
+            case '#': 
+                element.setAttribute('href', '#app');
+                break;
+            case '#app':
+                element.setAttribute('href', '#site');
+                break;
+            case '#site': 
+                element.setAttribute('href', '#design');
+                break;
+            case '#design': 
+                element.setAttribute('href', '#contato');
+                break
+            case '#contato':
+                element.setAttribute('href', '#');
+                break;
+        }
+    })
+
+    function hideInput() {
+        el = document.querySelector('.input.on');
+        el.classList.remove('on');
+        el.classList.add('done');
+        // console.log(el.nextSibling.nextElementSibling.classList.add('on'));
+        // el.classList.add('done');
+
+    }
+</script>
+</html>
