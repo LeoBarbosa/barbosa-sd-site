@@ -5,8 +5,8 @@
 }
 
 body {
-    background: url('./background-dark.png') white top left no-repeat;
-    background-size: contain;
+    background: url('./background-dark.png') white top center no-repeat;
+    background-size: cover;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -124,6 +124,23 @@ section#home {
     height: 100vh;
 }
 
+section#quem-somos {
+    justify-content: center;
+    text-align: center;
+}
+
+section#quem-somos article {
+    width: 1170px;
+}
+
+section#quem-somos article .title::after {
+    margin: 0 auto;
+}
+
+section#quem-somos .description {
+    max-width: 1170px;
+}
+
 section#contato {
     position: inherit;
 }
@@ -132,11 +149,17 @@ section#contato::after{
     content: '';
     background: url('./bg-footer-100.jpg') left bottom no-repeat;
     background-size: contain;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: -1;
+    right: 46vw;
+    bottom: -130px;
 }
 
 section .logo {
     padding: 0 100px;
-    max-width: 325px;
+    max-width: 20vw;
     max-height: 500px;
     align-self: flex-start;
     margin-top: 90px;
@@ -310,7 +333,7 @@ footer .icon_footer:hover span:nth-child(2) {
 
 .section-content {
     padding-top: 145px;
-    width: 1045px;
+    width: 1170px;
     max-width: 100%;
     margin: 0 auto;
     position: relative;

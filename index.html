@@ -26,7 +26,18 @@
         </ul>
     </header>
     <section id="home">
-        <img class="logo" src="./logo-dark.png" alt="Barbosa Soluções Digitais Logo">
+        <img class="logo" src="./logo_new.png" alt="Barbosa Soluções Digitais Logo">
+    </section>
+    <section id="quem-somos" class="section-content">
+        <article>
+            <div class="title">
+                Quem Somos
+            </div>
+            <div class="description">
+                Somos uma empresa que busca desenvolver as melhores soluções digitais para você. </br>
+                Trabalhamos com aplicativos, criação de sites, landapges, marketing digital e lojas virtuais, focando sempre na melhor experiencia do usuário.
+            </div>
+        </article>
     </section>
     <section id="app" class="section-content">
         <article>
@@ -34,7 +45,7 @@
                 Apps
             </div>
             <div class="description">
-                Desenvolvemos aplicativos híbridos de alta performance para todas as plataformas iOS, Android e Windows.
+                Desenvolvemos aplicativos híbridos de alta performance para as plataformas iOS e Android.
             </div>
         </article>
         <div class="image-reponsive">
@@ -138,6 +149,9 @@
 
         switch(attr) {
             case '#': 
+                element.setAttribute('href', '#quem-somos');
+                break;
+            case '#quem-somos': 
                 element.setAttribute('href', '#app');
                 break;
             case '#app':
